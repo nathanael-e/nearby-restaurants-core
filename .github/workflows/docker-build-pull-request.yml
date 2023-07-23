@@ -1,0 +1,19 @@
+name: Docker build
+
+on: pull_request
+
+jobs:
+    build:
+        name: Pull Request Build and Test
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v2
+
+            - name: Build docker/build
+              uses: docker/build-push-action@v2
+              with:
+                context: .
+                file: ./docker/build
+                push: false
