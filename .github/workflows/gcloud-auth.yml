@@ -1,3 +1,5 @@
+name: Google Cloud Deploy
+
 on: workflow_dispatch
 
 jobs:
@@ -14,3 +16,7 @@ jobs:
 
     - name: 'Use gcloud CLI'
       run: 'gcloud info'
+ 
+    - name: Configure kubectl
+      run: gcloud container clusters get-credentials restaurant-finder-cluster --location=europe-north1
+ 
