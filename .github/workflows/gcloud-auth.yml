@@ -20,5 +20,6 @@ jobs:
     - name: Configure kubectl
       run: |
         gcloud components install gke-gcloud-auth-plugin
+        gcloud auth configure-docker europe-north1-docker.pkg.dev
         gcloud container clusters get-credentials restaurant-finder-cluster --location=europe-north1
  
