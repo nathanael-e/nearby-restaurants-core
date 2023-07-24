@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: restaurant-finder-service
+spec:
+  type: LoadBalancer
+  # loadBalancerIP: 35.228.131.39
+  selector:
+    app: restaurant-finder
+  ports:
+    - name: http-port
+      protocol: TCP
+      port: 60000
+      targetPort: 5000

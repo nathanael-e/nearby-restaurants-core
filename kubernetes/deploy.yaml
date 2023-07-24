@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: restaurant-finder
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: restaurant-finder
+  template:
+    metadata:
+      labels:
+        app: restaurant-finder
+    spec:
+      containers:
+        - name: restaurant-finder
+          image: europe-north1-docker.pkg.dev/restaurant-finder-393607/restaurant-finder-docker/nearby-restaurants:latest # Replace with your actual container image
+          ports:
+            - name: http-port
+              containerPort: 5000
