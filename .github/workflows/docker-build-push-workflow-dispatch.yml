@@ -4,7 +4,7 @@ on:
     workflow_dispatch:
 
 jobs:
-  docker:
+  push_to_docker_hub:
     runs-on: ubuntu-latest
     steps:
       -
@@ -34,4 +34,42 @@ jobs:
       - 
         name: Push Docker Image
         run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/nearby-restaurants:${{ steps.extract_branch.outputs.branch }}-${{ steps.set_commit_hash.outputs.hash }}
+  
+  push_to_gcr:
+    runs-on: ubuntu-latest
+    steps: 
+    - 
+      name: Checkout
+      uses: actions/checkout@v2
+    -
+      name: Extract branch name
+      shell: bash
+      run: echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
+      id: extract_branch
+    - 
+      name: Set commit hash
+      id: set_commit_hash
+      run: echo "hash=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
+    - 
+      name: Echo commit hash
+      run: echo ${{ steps.set_commit_hash.outputs.hash }}
+    - 
+      id: 'auth'
+      uses: 'google-github-actions/auth@v1'
+      with:
+        credentials_json: '${{ secrets.GCLOUD_GSA_JSON }}'
+    - 
+      name: 'Set up Cloud SDK'
+      uses: 'google-github-actions/setup-gcloud@v1'
+    - 
+      name: 'Use gcloud CLI'
+      run: 'gcloud info'
+    - 
+      name: Build Docker image
+      run: docker build -t europe-north1-docker.pkg.dev/restaurant-finder-393607/restaurant-finder-docker/nearby-restaurants:${{ steps.extract_branch.outputs.branch }}-${{ steps.set_commit_hash.outputs.hash }} -f docker/Dockerfile .
+    - 
+      name: Configure Docker to use gcloud command-line tool
+      run: |-
+        gcloud --quiet auth configure-docker europe-north1-docker.pkg.dev
+        docker push europe-north1-docker.pkg.dev/restaurant-finder-393607/restaurant-finder-docker/nearby-restaurants:${{ steps.extract_branch.outputs.branch }}-${{ steps.set_commit_hash.outputs.hash }}
 
