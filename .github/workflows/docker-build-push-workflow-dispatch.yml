@@ -10,6 +10,11 @@ jobs:
       -
         name: Checkout
         uses: actions/checkout@v2
+      -
+        name: Extract branch name
+        shell: bash
+        run: echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
+        id: extract_branch
       - 
         name: Set commit hash
         id: set_commit_hash
@@ -18,23 +23,15 @@ jobs:
         name: Echo commit hash
         run: echo ${{ steps.set_commit_hash.outputs.hash }}
       -
-        name: Set up QEMU
-        uses: docker/setup-qemu-action@v1
-      -
-        name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v1
-      -
         name: Login to DockerHub
         uses: docker/login-action@v1
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-      -
-        name: Build and push
-        uses: docker/build-push-action@v2
-        with:
-          context: .
-          file: ./docker/Dockerfile
-          push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/nearby-restaurants:${{ steps.set_commit_hash.outputs.hash }}
+      - 
+        name: Build Docker Image
+        run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/nearby-restaurants:${{ steps.extract_branch.outputs.branch }}-${{ steps.set_commit_hash.outputs.hash }} -f docker/Dockerfile .
+      - 
+        name: Push Docker Image
+        run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/nearby-restaurants:${{ steps.extract_branch.outputs.branch }}-${{ steps.set_commit_hash.outputs.hash }}
 
