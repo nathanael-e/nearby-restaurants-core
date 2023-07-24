@@ -10,6 +10,13 @@ jobs:
       -
         name: Checkout
         uses: actions/checkout@v2
+      - 
+        name: Set commit hash
+        id: set_commit_hash
+        run: echo "hash=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
+      - 
+        name: Echo commit hash
+        run: echo ${{ steps.set_commit_hash.outputs.hash }}
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v1
@@ -29,5 +36,5 @@ jobs:
           context: .
           file: ./docker/Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/nearby-restaurants:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/nearby-restaurants:${{ steps.set_commit_hash.outputs.hash }}
 
