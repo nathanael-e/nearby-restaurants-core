@@ -4,6 +4,6 @@ bp = Blueprint("hello world", __name__)
 
 
 @bp.route("/", methods=["GET"])
-def restaurants():
+def hello():
     """Hello world"""
-    return "Hello, world!"
+    return "Welcome ..."
