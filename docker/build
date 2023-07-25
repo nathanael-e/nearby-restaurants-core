@@ -4,3 +4,4 @@ COPY requirements.txt requirements.txt
 RUN pip3 install -r requirements.txt
 COPY . .
 RUN pylint --fail-under=10 src
+RUN pytest --cov-report term-missing --cov=src test/
