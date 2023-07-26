@@ -4,3 +4,5 @@ __pycache__/
 pip-log.txt
 .env
 .vscode
+.coverage
+coverage.xml
