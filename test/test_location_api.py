@@ -7,13 +7,6 @@ import requests_mock
 
 
 class TestLocationAPI(TestBase):
-    def test_location_api_valid_token(self, app: Flask, headers: dict):
-        with app.test_client() as client:
-            response = client.get("/api/location/restaurants", headers=headers)
-            data = response.json
-            assert response.status_code == 400
-            assert data["error"] == "Both longitude and latitude are required."
-
     def test_location_api_valid_token_missing_coordinates(self, app: Flask, headers):
         with app.test_client() as client:
             response = client.get("/api/location/restaurants", headers=headers)
@@ -53,7 +46,7 @@ class TestLocationAPI(TestBase):
                 assert response.status_code == 400
                 assert data == "error: received invalid status code: REQUEST_DENIED"
 
-    def test_location_api_bad_request(
+    def test_location_api_bad_request_google_api(
         self, test_client: Flask.test_client, headers: dict
     ):
         with requests_mock.Mocker() as mocker:
@@ -69,7 +62,7 @@ class TestLocationAPI(TestBase):
             )
             assert response.status_code == 500
 
-    def test_location_api_valid_places_token(
+    def test_location_api_valid_google_token(
         self, test_client: Flask.test_client, headers: dict
     ):
         with requests_mock.Mocker() as mocker:
@@ -93,7 +86,6 @@ class TestLocationAPI(TestBase):
                 data = response.json
                 assert response.status_code == 200
                 print(data)
-                # assert data == "error: received invalid status code: REQUEST_DENIED"
 
     def test_location_api_invalid_token(self, app):
         invalid_header = {
