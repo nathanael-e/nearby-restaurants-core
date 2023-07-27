@@ -1,6 +1,8 @@
 # pylint: disable=C0103
 from itsdangerous import Serializer, BadSignature, SignatureExpired
 from flask import Blueprint, request, jsonify
+import requests
+from .. import constants
 
 
 class LocationAPI:
@@ -16,7 +18,7 @@ class LocationAPI:
         token = request.headers.get("Authorization")
         if token and token.startswith(self.__BEARER):
             token = token[len(self.__BEARER) :]
-            serializer = Serializer(self.app.config["SECRET_KEY"])
+            serializer = Serializer(self.app.config[constants.API_TOKEN])
             try:
                 serializer.loads(token)
                 return None
@@ -35,12 +37,21 @@ class LocationAPI:
         if not longitude or not latitude:
             return jsonify({"error": "Both longitude and latitude are required."}), 400
 
-        restaurants_data = [
-            {"name": "Restaurant A", "longitude": 123.45, "latitude": 67.89},
-            {"name": "Restaurant B", "longitude": 98.76, "latitude": 54.32},
-        ]
+        url = (
+            "https://maps.googleapis.com/maps/api/place/nearbysearch/json?"
+            f"location={latitude}%2C{longitude}&rankby=distance&"
+            f"type=restaurant&opennow&key={self.app.config[constants.API_GOOGLE_PLACES_TOKEN]}"
+        )
 
-        return jsonify(restaurants_data)
+        response = requests.get(url, timeout=10)
+        if response.status_code == 200:
+            json_response = response.json()
+            status = json_response["status"]
+            if status:
+                if status == "OK":
+                    return json_response
+                return jsonify("error: received invalid status code: " + status), 400
+        return jsonify({"error": "Failed to fetch data"}), 500
 
     def get_bp(self):
         """Return the blueprint"""
