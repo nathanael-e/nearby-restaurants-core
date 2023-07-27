@@ -14,7 +14,18 @@ spec:
     spec:
       containers:
         - name: restaurant-finder
-          image: europe-north1-docker.pkg.dev/restaurant-finder-393607/restaurant-finder-docker/nearby-restaurants:latest # Replace with your actual container image
+          image: europe-north1-docker.pkg.dev/restaurant-finder-393607/restaurant-finder-docker/nearby-restaurants:master-217ded7 # Replace with your actual container image
           ports:
             - name: http-port
               containerPort: 5000
+          env:
+            - name: API_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: api-token
+                  key: flask-server
+            - name: API_GOOGLE_PLACES_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: api-token
+                  key: api-google-places-token
