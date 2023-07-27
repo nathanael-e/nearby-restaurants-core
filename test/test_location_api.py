@@ -69,6 +69,32 @@ class TestLocationAPI(TestBase):
             )
             assert response.status_code == 500
 
+    def test_location_api_valid_places_token(
+        self, test_client: Flask.test_client, headers: dict
+    ):
+        with requests_mock.Mocker() as mocker:
+            with open(
+                "test/resources/google_places_response.json",
+                encoding="utf-8",
+            ) as response_json:
+                mocker = requests_mock.Mocker()
+                matcher = re.compile(
+                    "https://maps.googleapis.com/maps/api/place/nearbysearch/.*"
+                )
+                mocker.get(
+                    matcher,
+                    json=json.load(response_json),
+                )
+                mocker.start()
+                response = test_client.get(
+                    "/api/location/restaurants?longitude=2&latitude=5",
+                    headers=headers,
+                )
+                data = response.json
+                assert response.status_code == 200
+                print(data)
+                # assert data == "error: received invalid status code: REQUEST_DENIED"
+
     def test_location_api_invalid_token(self, app):
         invalid_header = {
             "Authorization": "Bearer invalid_token",
