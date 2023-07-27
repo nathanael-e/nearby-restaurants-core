@@ -1,0 +1,984 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "Aaw_FcIKMVD7QqHZx-rKI4ev99OMJmUaMFEfb36nXS2YIr9wt6aMieK8gCesDLjjT-Vhidvptd0jZ0xowlVAy4NN1Fh7XaYzr6XbVvYMqUHbAF8Zh6k8QDV6Ii4WlbkWdV1QqSfgFkV2Kqies-5c4ncdAS3pPQ4eJ5MHaIoUvE7RaIxYW5ew3pDm3ki3Jq9SCYmSHfohSzPpOQdfBBqDiSPJk9Yn7USOu1mndQepz5_J073JD62AgvLiZsMpGJj6nxl1nOWhZefONNOfyxBC5teOVMGYXq8w_uz1lk68k8t1luJAyfD9GZWkyTZIVF_iSxu_wBTKgFlK5FVeOUOPGgnvpMt9CtgqgcD9EU1MUYf7kA_Pt6AI_LsKquQ8-P94bzCd71KZT31L7moIGEHmmcvWR7CmN4UQi3GREDr8qSoVWbHHUO6QSbW0XHf19sGnSkdqVqBWuQ",
+   "results" : [
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 59.33218309999999,
+               "lng" : 18.0408828
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 59.3334601802915,
+                  "lng" : 18.0421545302915
+               },
+               "southwest" : {
+                  "lat" : 59.33076221970849,
+                  "lng" : 18.03945656970849
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+         "name" : "Bee\u2019s Thai Food",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 2736,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109946406670459143357\"\u003eExtreme Power\u003c/a\u003e"
+               ],
+               "photo_reference" : "Aaw_FcL1Cs7CoBOjHDpB2EE082M1-Aj9dwfcr_f5NaF3-QoaxBUzukP3z0kLgyHzAV8DfRRmJiVqcjINuCYueXV8ILzA6jxS_DLWObqF506DjyuU6cpOpMAkT2DBy8Mks1A61444ET1p5BegxDqME5VS195CmDPYAoxwyZ_Ib3cDA1orFLxQ",
+               "width" : 3648
+            }
+         ],
+         "place_id" : "ChIJhewYyWKdX0YRtVJyQyuOgzA",
+         "plus_code" : {
+            "compound_code" : "82JR+V9 Stockholm, Sweden",
+            "global_code" : "9FFW82JR+V9"
+         },
+         "price_level" : 1,
+         "rating" : 3.9,
+         "reference" : "ChIJhewYyWKdX0YRtVJyQyuOgzA",
+         "scope" : "GOOGLE",
+         "types" : [ "restaurant", "food", "point_of_interest", "establishment" ],
+         "user_ratings_total" : 136,
+         "vicinity" : "Kungsholmsgatan 40, Stockholm"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 59.33148669999999,
+               "lng" : 18.0402066
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 59.33312548029151,
+                  "lng" : 18.0417163302915
+               },
+               "southwest" : {
+                  "lat" : 59.33042751970849,
+                  "lng" : 18.0390183697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+         "name" : "Heat Kronoberg (st\u00e4ngd f\u00f6r allm\u00e4nheten)",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 904,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109932366588673631034\"\u003eHeat Kronoberg (st\u00e4ngd f\u00f6r allm\u00e4nheten)\u003c/a\u003e"
+               ],
+               "photo_reference" : "Aaw_FcId9jvuFI2phkypjr4mlUzp3DSAdpTuQmdnEjntWIcPHAEiO2oPDPIXTeRV7oMq7_fihLz7CvY52IsRvJ2OibJ7BeoqYSit8lj3C5bsvDXtZ2lv2LBwNNAQcCEFCcqKz2cXMNahwVsM8VMTsPamKaFqCGdJxJCfSsd4KvhlvF0T8X7N",
+               "width" : 1608
+            }
+         ],
+         "place_id" : "ChIJEbNO4fqdX0YRhLbNxBrm25E",
+         "plus_code" : {
+            "compound_code" : "82JR+H3 Stockholm, Sweden",
+            "global_code" : "9FFW82JR+H3"
+         },
+         "price_level" : 2,
+         "rating" : 3.4,
+         "reference" : "ChIJEbNO4fqdX0YRhLbNxBrm25E",
+         "scope" : "GOOGLE",
+         "types" : [ "restaurant", "food", "point_of_interest", "establishment" ],
+         "user_ratings_total" : 8,
+         "vicinity" : "Polhemsgatan 30, Stockholm"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 59.33339589999999,
+               "lng" : 18.0391622
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 59.33473463029151,
+                  "lng" : 18.0405889302915
+               },
+               "southwest" : {
+                  "lat" : 59.33203666970849,
+                  "lng" : 18.0378909697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+         "name" : "Kungsholmens pizzeria",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 3264,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105097637712934419061\"\u003eKungsholmens Pizzeria &amp; Deli\u003c/a\u003e"
+               ],
+               "photo_reference" : "Aaw_FcIjWK_7_hza_kcSFzonVohQgq-pWzJivrLr6-ZN3AOCEM7U5Lcj4Dro9SfbkSyzQ5ch50Wj9Lb63eKTIqrfhK36iv_f7MIiXwzd7mY8ubbMlJljSjjH0l8b1LvpalhjALXEdoE0X9r0WBoFtyH_GNNe4b1ukG96ro99zUBr0JdycH2B",
+               "width" : 2448
+            }
+         ],
+         "place_id" : "ChIJX5vVJn2dX0YRQm4gVcL9GVQ",
+         "plus_code" : {
+            "compound_code" : "82MQ+9M Stockholm, Sweden",
+            "global_code" : "9FFW82MQ+9M"
+         },
+         "price_level" : 2,
+         "rating" : 3.5,
+         "reference" : "ChIJX5vVJn2dX0YRQm4gVcL9GVQ",
+         "scope" : "GOOGLE",
+         "types" : [ "restaurant", "food", "point_of_interest", "establishment" ],
+         "user_ratings_total" : 282,
+         "vicinity" : "Celsiusgatan 9, Stockholm"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 59.333195,
+               "lng" : 18.0413499
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 59.3345616302915,
+                  "lng" : 18.04254193029151
+               },
+               "southwest" : {
+                  "lat" : 59.3318636697085,
+                  "lng" : 18.0398439697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+         "name" : "La Famiglia Pizzeria | En italiensk restaurang och krog | Napolitansk Pizza",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 1600,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109795345073202486307\"\u003eLa Famiglia Pizzeria | En italiensk restaurang och krog | Napolitansk Pizza\u003c/a\u003e"
+               ],
+               "photo_reference" : "Aaw_FcI0XkpQbmXnJjJG8981Jv71NqVXivlLp4lci0Gxu_asAdP1KJUT8F4BaClohBVcp0lwiV5cR3SV6wuSurJ8KmYV2g6ttiU9M9yy6z7Sk-XCePRmjSZN_zXqzlT3Up0DLbeAZDnuHnbB-PmVe5OpLJHUSej6Z2rjXeOEDVIIjCn9xXd6",
+               "width" : 1200
+            }
+         ],
+         "place_id" : "ChIJd7uq0i6dX0YRH_q01DnxwYI",
+         "plus_code" : {
+            "compound_code" : "82MR+7G Stockholm, Sweden",
+            "global_code" : "9FFW82MR+7G"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJd7uq0i6dX0YRH_q01DnxwYI",
+         "scope" : "GOOGLE",
+         "types" : [
+            "cafe",
+            "bar",
+            "restaurant",
+            "food",
+            "store",
+            "point_of_interest",
+            "establishment"
+         ],
+         "user_ratings_total" : 56,
+         "vicinity" : "Fleminggatan 37, Stockholm"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 59.33356169999999,
+               "lng" : 18.0385018
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 59.33496613029151,
+                  "lng" : 18.0399326302915
+               },
+               "southwest" : {
+                  "lat" : 59.33226816970849,
+                  "lng" : 18.0372346697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+         "name" : "Phil's Burger",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 1667,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103070146610022503444\"\u003ePhil&#39;s Burger\u003c/a\u003e"
+               ],
+               "photo_reference" : "Aaw_FcLXMvqa8rjBcM7Zcm2P6udpMOMO11mUjB1C2nEy0Kta0iTbDH5mPwVn_9LUy2CMC1sulDj_B54AwAGgiJzEeBZE7xUfrv1TN-f-OB13cbFEnm4CBNS_h6uNsXR2mQ5B7D_HJGa2Al2z_QwRQjmmrzsELHgTvpiblaRKxlTOafmaGyjf",
+               "width" : 2500
+            }
+         ],
+         "place_id" : "ChIJDcrpH32dX0YR0_aYRYtul_4",
+         "plus_code" : {
+            "compound_code" : "82MQ+CC Stockholm, Sweden",
+            "global_code" : "9FFW82MQ+CC"
+         },
+         "price_level" : 2,
+         "rating" : 4.1,
+         "reference" : "ChIJDcrpH32dX0YR0_aYRYtul_4",
+         "scope" : "GOOGLE",
+         "types" : [ "restaurant", "food", "point_of_interest", "establishment" ],
+         "user_ratings_total" : 1466,
+         "vicinity" : "Fleminggatan 49, Stockholm"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 59.3321316,
+               "lng" : 18.0427661
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 59.33360703029151,
+                  "lng" : 18.0441773302915
+               },
+               "southwest" : {
+                  "lat" : 59.3309090697085,
+                  "lng" : 18.0414793697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+         "name" : "Kiyo restaurant",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 2448,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106284785642365475585\"\u003eyu zhu wang\u003c/a\u003e"
+               ],
+               "photo_reference" : "Aaw_FcIezq51A_j2CGFs4iSNFwLj-vRAXobczYN8uxvalLkPb9asXo9-WUiNiebJkRbVOzgG3PkJ7WyaWdtGnbsBwHyx7V-idDSRXcqOJul1hiQGoR0U7KSj_3nYkELziJt4GWwVcpLNGwrw_gsIuDLZKK_sQX-av9CtKjk1t3_14g8iWoaZ",
+               "width" : 3264
+            }
+         ],
+         "place_id" : "ChIJf1-56WKdX0YR7EnOggek0nI",
+         "plus_code" : {
+            "compound_code" : "82JV+V4 Stockholm, Sweden",
+            "global_code" : "9FFW82JV+V4"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJf1-56WKdX0YR7EnOggek0nI",
+         "scope" : "GOOGLE",
+         "types" : [ "restaurant", "food", "point_of_interest", "establishment" ],
+         "user_ratings_total" : 45,
+         "vicinity" : "Norra Agnegatan 41, Stockholm"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 59.33345759999999,
+               "lng" : 18.0418439
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 59.33471078029151,
+                  "lng" : 18.0431442802915
+               },
+               "southwest" : {
+                  "lat" : 59.3320128197085,
+                  "lng" : 18.0404463197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+         "name" : "Matsu Sushi",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 1776,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105288787263163649924\"\u003ePolette Gonzalez\u003c/a\u003e"
+               ],
+               "photo_reference" : "Aaw_FcJNYv851rMWxJ5sWB6V3eAEXa3TgcQrdHcf7_6LRZGnV56x7_2AkriljALVurlnvCWHsRyXmQGo5kmBb1IRoJ7jrYmc4s4l57IORj95ayh2SzPz3mTT7DOXCQiBbeDN8rgLjwL6OkxsDumXX3sz_w-YYIz0AWII82IQRGGATXeyZSlE",
+               "width" : 2268
+            }
+         ],
+         "place_id" : "ChIJoel11mKdX0YRKpfeKUsBJ40",
+         "plus_code" : {
+            "compound_code" : "82MR+9P Stockholm, Sweden",
+            "global_code" : "9FFW82MR+9P"
+         },
+         "price_level" : 2,
+         "rating" : 4.4,
+         "reference" : "ChIJoel11mKdX0YRKpfeKUsBJ40",
+         "scope" : "GOOGLE",
+         "types" : [ "restaurant", "food", "point_of_interest", "establishment" ],
+         "user_ratings_total" : 309,
+         "vicinity" : "Fleminggatan 22, Stockholm"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 59.3336424,
+               "lng" : 18.0378581
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 59.3350450302915,
+                  "lng" : 18.0392939802915
+               },
+               "southwest" : {
+                  "lat" : 59.33234706970849,
+                  "lng" : 18.0365960197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+         "name" : "Subway",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 3024,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114732856310738866601\"\u003eMrs P Reviews\u003c/a\u003e"
+               ],
+               "photo_reference" : "Aaw_FcKJK5PGunUz6ZxMymfwIHyozth2EFRQzmgXPcnkBxth5mnVANkG2XHrYq0zi_5UbBLq3l6zKQExESfjx96BZ4jxpvOGi0z4ckZTVjM-gZTIB4J5DRvMw9MxMLpAoc9uhx2c3ToxaGYYyQxcws9ygUqAHN_5cGpzrI-D0NenCPgtfG95",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJB3rHHX2dX0YRB7Zmy1iwCAk",
+         "plus_code" : {
+            "compound_code" : "82MQ+F4 Stockholm, Sweden",
+            "global_code" : "9FFW82MQ+F4"
+         },
+         "price_level" : 2,
+         "rating" : 3.8,
+         "reference" : "ChIJB3rHHX2dX0YRB7Zmy1iwCAk",
+         "scope" : "GOOGLE",
+         "types" : [
+            "meal_takeaway",
+            "restaurant",
+            "food",
+            "point_of_interest",
+            "establishment"
+         ],
+         "user_ratings_total" : 111,
+         "vicinity" : "Fleminggatan 51, Stockholm"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 59.33235990000001,
+               "lng" : 18.0431693
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 59.3337176802915,
+                  "lng" : 18.0444516802915
+               },
+               "southwest" : {
+                  "lat" : 59.33101971970849,
+                  "lng" : 18.0417537197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+         "name" : "Lunch buffet",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 2448,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106284785642365475585\"\u003eyu zhu wang\u003c/a\u003e"
+               ],
+               "photo_reference" : "Aaw_FcIEaVZw6dGL51mlFrCkdlhfLwnfgTrVPMUpjCn1XTbHp67wZKE7EhrHRMG9EwRKkaTPjLpLIw30NbK8b9o5ZQg_N_jrm3FpSltWg-YsO0yow0YRewrL7IKMJ8wRgKCBaq5xFutNj1GCIrp0jvBqLyiUDPy8feCCrxX6zB5DrL0L6jX8",
+               "width" : 3264
+            }
+         ],
+         "place_id" : "ChIJa_rn20GdX0YRJ-0WcrzcEqc",
+         "plus_code" : {
+            "compound_code" : "82JV+W7 Stockholm, Sweden",
+            "global_code" : "9FFW82JV+W7"
+         },
+         "rating" : 5,
+         "reference" : "ChIJa_rn20GdX0YRJ-0WcrzcEqc",
+         "scope" : "GOOGLE",
+         "types" : [ "restaurant", "food", "point_of_interest", "establishment" ],
+         "user_ratings_total" : 1,
+         "vicinity" : "Norra Agnegatan, Stockholm"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 59.3337066,
+               "lng" : 18.0375524
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 59.33510838029152,
+                  "lng" : 18.0389011802915
+               },
+               "southwest" : {
+                  "lat" : 59.3324104197085,
+                  "lng" : 18.0362032197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/cafe-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/cafe_pinlet",
+         "name" : "Caf\u00e9 Bl\u00e5b\u00e4r",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 3188,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/115090841130542812023\"\u003eMagnus S\u003c/a\u003e"
+               ],
+               "photo_reference" : "Aaw_FcI7K8XoTRChsApzWNNkg4WM3fJmEzbzmOBclshawIj1qH2weV1VPnJIZ3X4hJM3O0fq-16JSOd81VLm58uH-WZeZ-jUPRt6BG5O_xAbMoHdLZa7kpyO3I766SHxlyBtrG8s2MEui4j7gDmQRJtSRIT1WpQB-0Eypvh0zbW9ynRccUuL",
+               "width" : 5018
+            }
+         ],
+         "place_id" : "ChIJlaw7HX2dX0YROK-_u4NqqlA",
+         "plus_code" : {
+            "compound_code" : "82MQ+F2 Stockholm, Sweden",
+            "global_code" : "9FFW82MQ+F2"
+         },
+         "price_level" : 1,
+         "rating" : 4,
+         "reference" : "ChIJlaw7HX2dX0YROK-_u4NqqlA",
+         "scope" : "GOOGLE",
+         "types" : [ "cafe", "restaurant", "food", "point_of_interest", "establishment" ],
+         "user_ratings_total" : 252,
+         "vicinity" : "Fleminggatan 53, Stockholm"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 59.33027569999999,
+               "lng" : 18.0399388
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 59.3316333302915,
+                  "lng" : 18.0412025802915
+               },
+               "southwest" : {
+                  "lat" : 59.32893536970849,
+                  "lng" : 18.0385046197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+         "name" : "Ramen Manga",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 1306,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117186574093211675434\"\u003eRamen Manga\u003c/a\u003e"
+               ],
+               "photo_reference" : "Aaw_FcJNNIUChxx51UzC5AkkpSfizNaI3EmHIzmvRVJayWkZgOWPA4t2wUs07Fe0Vjr6ThZAAWkM7yPlL6MbinpU1z0d4Xsh6h1thE8IywezgsV40bImiJ5wz-LMPYkX-0CROEL60DQ__Z9KGad32bSIilfUrYUD7NcglreVNZ-EM3hzHW3Y",
+               "width" : 1044
+            }
+         ],
+         "place_id" : "ChIJARQiBth3X0YRaNkpvf-GN5E",
+         "plus_code" : {
+            "compound_code" : "82JQ+4X Stockholm, Sweden",
+            "global_code" : "9FFW82JQ+4X"
+         },
+         "price_level" : 2,
+         "rating" : 3.9,
+         "reference" : "ChIJARQiBth3X0YRaNkpvf-GN5E",
+         "scope" : "GOOGLE",
+         "types" : [ "restaurant", "food", "point_of_interest", "establishment" ],
+         "user_ratings_total" : 305,
+         "vicinity" : "Pilgatan 28, Stockholm"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 59.33289929999999,
+               "lng" : 18.0436302
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 59.3343062802915,
+                  "lng" : 18.0450066802915
+               },
+               "southwest" : {
+                  "lat" : 59.33160831970849,
+                  "lng" : 18.0423087197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+         "name" : "Texas Longhorn",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 4608,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109299935939827529590\"\u003ekerstin samsson\u003c/a\u003e"
+               ],
+               "photo_reference" : "Aaw_FcLirqWCmSQ67ubWnm_x7ZQutDjsbXlWp6UWkNjdIZPX5AUP3WeQbPPWSeHQSWg-0LgK1oasQU4BJfGiOYVN9xizvien7oR2gATeY8rpSitJ-DrWa9Yj3Jyy2LNEPOqRapqTlGUGSIfYlAX4vtlvwPRLVa3nD-aP9e5Gz8qIHyz5NdsB",
+               "width" : 3456
+            }
+         ],
+         "place_id" : "ChIJ5avDH2OdX0YRJlx7ilt7wic",
+         "plus_code" : {
+            "compound_code" : "82MV+5F Stockholm, Sweden",
+            "global_code" : "9FFW82MV+5F"
+         },
+         "price_level" : 2,
+         "rating" : 4.1,
+         "reference" : "ChIJ5avDH2OdX0YRJlx7ilt7wic",
+         "scope" : "GOOGLE",
+         "types" : [ "restaurant", "food", "point_of_interest", "establishment" ],
+         "user_ratings_total" : 1199,
+         "vicinity" : "Fleminggatan 27, Stockholm"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 59.3328848,
+               "lng" : 18.0438034
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 59.3342937302915,
+                  "lng" : 18.0451144302915
+               },
+               "southwest" : {
+                  "lat" : 59.33159576970849,
+                  "lng" : 18.0424164697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+         "name" : "TRIBECA Burgers & Beers",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 2268,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108324259308147618352\"\u003eMariusz M\u003c/a\u003e"
+               ],
+               "photo_reference" : "Aaw_FcJruokst-F0US-WDpguxHpWZLKH7Qkl82gTK-Ggk7d1yLxJikspO0fVcQqHIrwqjHDb2H5-1IZUoPefTTixBrpE_7eQu6wLvC7GLU5Ky9SKOrakuUJHunBVWMWEEh3xE6k7RX2KAEPyGCqfN0bpq9qxGqKXgdl8sWcm4kHiy_ZFBjIM",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJcT1QPA2dX0YR9TsJZqNXh8Q",
+         "plus_code" : {
+            "compound_code" : "82MV+5G Stockholm, Sweden",
+            "global_code" : "9FFW82MV+5G"
+         },
+         "price_level" : 2,
+         "rating" : 4.3,
+         "reference" : "ChIJcT1QPA2dX0YR9TsJZqNXh8Q",
+         "scope" : "GOOGLE",
+         "types" : [ "restaurant", "food", "point_of_interest", "establishment" ],
+         "user_ratings_total" : 268,
+         "vicinity" : "Fleminggatan 27, Stockholm"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 59.3317451,
+               "lng" : 18.0442616
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 59.3330142802915,
+                  "lng" : 18.0455370302915
+               },
+               "southwest" : {
+                  "lat" : 59.33031631970849,
+                  "lng" : 18.0428390697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+         "name" : "Saffran",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 3024,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100681712966653986556\"\u003eTommy Heckenberger\u003c/a\u003e"
+               ],
+               "photo_reference" : "Aaw_FcJ_cutQqNuZvQKEr98oswEAMCCUHR_GjskOjFhNV2XRZ9RYQ75PrFHEGrT2XiiWAfqfOAM_U8hePavsMcH8Cb9aX4PrPhzieegK7xuAEN1lYUgH9WcU1_2j9UywaFxWK9KJWRQABs-sUMQzCf-MA-s0WXc8FZjm5ATL_-73IEZl6EI8",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJkVPz82KdX0YR7Y5A6fg0g-w",
+         "plus_code" : {
+            "compound_code" : "82JV+MP Stockholm, Sweden",
+            "global_code" : "9FFW82JV+MP"
+         },
+         "price_level" : 2,
+         "rating" : 3.9,
+         "reference" : "ChIJkVPz82KdX0YR7Y5A6fg0g-w",
+         "scope" : "GOOGLE",
+         "types" : [ "restaurant", "food", "point_of_interest", "establishment" ],
+         "user_ratings_total" : 420,
+         "vicinity" : "Kungsholmsgatan 24, Stockholm"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 59.332732,
+               "lng" : 18.0445151
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 59.3341663802915,
+                  "lng" : 18.0459014302915
+               },
+               "southwest" : {
+                  "lat" : 59.33146841970849,
+                  "lng" : 18.0432034697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+         "name" : "K-Amed Kolgrill",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 3000,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104627802614326077282\"\u003eAzad Kalhor\u003c/a\u003e"
+               ],
+               "photo_reference" : "Aaw_FcKoQ0IGZa_iQaF4i9imu_6VDTJdKTAOmF6HatS8RmvUAM-dzH9cr8AhINQRm1gB43H8HVHMyp9LhbSUkp-HuB3Z1ERF_bFAOX_ijU660_j0KsRC0gEDtsfPZq3t0rrXWNcO6oyltcWaPL1eEsJg1z6v5qm1F7P4fCNjTJYaBssXUpHd",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJBcU3_WKdX0YRfDtW5Q9MxfM",
+         "plus_code" : {
+            "compound_code" : "82MV+3R Stockholm, Sweden",
+            "global_code" : "9FFW82MV+3R"
+         },
+         "price_level" : 2,
+         "rating" : 4.4,
+         "reference" : "ChIJBcU3_WKdX0YRfDtW5Q9MxfM",
+         "scope" : "GOOGLE",
+         "types" : [ "restaurant", "food", "point_of_interest", "establishment" ],
+         "user_ratings_total" : 586,
+         "vicinity" : "Fleminggatan 21, Stockholm"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 59.33164199999999,
+               "lng" : 18.0445383
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 59.3329445302915,
+                  "lng" : 18.0458064302915
+               },
+               "southwest" : {
+                  "lat" : 59.33024656970849,
+                  "lng" : 18.0431084697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+         "name" : "JOE & THE JUICE",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 3024,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104484260279914722934\"\u003eVigorous Q\u003c/a\u003e"
+               ],
+               "photo_reference" : "Aaw_FcLsKf4Io2qjZJ-N6x31dd2ywYjsSB7uj3CFEequXRl5ABrt2dDXe1SJ2E9QzBa27RM3Xy2MputzY3mYFriJ7farznzJnjnAJCtvTS0VzEM60YbUKiooEC0T__RaMfCjpoIleQZLGkEtnF2nbn4lXEdNGwTQtU0-KkeqtRag8resHSZi",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJHx6-9mKdX0YR0_y2vqdq0Zw",
+         "plus_code" : {
+            "compound_code" : "82JV+MR Stockholm, Sweden",
+            "global_code" : "9FFW82JV+MR"
+         },
+         "price_level" : 2,
+         "rating" : 4.1,
+         "reference" : "ChIJHx6-9mKdX0YR0_y2vqdq0Zw",
+         "scope" : "GOOGLE",
+         "types" : [
+            "cafe",
+            "meal_takeaway",
+            "restaurant",
+            "food",
+            "store",
+            "point_of_interest",
+            "establishment"
+         ],
+         "user_ratings_total" : 153,
+         "vicinity" : "Scheelegatan 9, Stockholm"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 59.33219779999999,
+               "lng" : 18.0448138
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 59.33358168029149,
+                  "lng" : 18.0462439802915
+               },
+               "southwest" : {
+                  "lat" : 59.33088371970849,
+                  "lng" : 18.0435460197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+         "name" : "Maxos",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 3712,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114931570518450742122\"\u003eMaxos\u003c/a\u003e"
+               ],
+               "photo_reference" : "Aaw_FcJDcTRng69Ud-Pl9KRDEstPC_0qPIw4wK_ahxdOEZlz0uiKLG3zipyCpj9HC6gnrSmJ0QJHm3irCscu7w43f4s2NP6wU_xbrhFQUi5wNrh3C5oRCzTvNw3ui9YCu9huIbIN9tU6gFbZaB96llplRXRgA-kyuTV9F8FwsPWjX8MDHl8y",
+               "width" : 5568
+            }
+         ],
+         "place_id" : "ChIJK7Sc-WKdX0YREzOGsJmY9c8",
+         "plus_code" : {
+            "compound_code" : "82JV+VW Stockholm, Sweden",
+            "global_code" : "9FFW82JV+VW"
+         },
+         "price_level" : 2,
+         "rating" : 4.5,
+         "reference" : "ChIJK7Sc-WKdX0YREzOGsJmY9c8",
+         "scope" : "GOOGLE",
+         "types" : [ "restaurant", "food", "point_of_interest", "establishment" ],
+         "user_ratings_total" : 649,
+         "vicinity" : "Scheelegatan 13, Stockholm"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 59.332435,
+               "lng" : 18.0448309
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 59.3337668802915,
+                  "lng" : 18.0462954302915
+               },
+               "southwest" : {
+                  "lat" : 59.33106891970849,
+                  "lng" : 18.0435974697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+         "name" : "Saigon Baguette",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 4032,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109074457180713740946\"\u003eSaigon Baguette\u003c/a\u003e"
+               ],
+               "photo_reference" : "Aaw_FcIFE4eTmXICuzUP7i8NG9KBCjOALivrSjGrm_n0UIoSTIibihDxC1d_5lcCcYaiUfiBaFmScyCeE8yd8Es9_Vf-yE0cBcWGxBZOFNRHPil_6-eMUn7hj6Hl5LWteeL9nuuaUyR26WbjAe2cgXPfcm_fEVyB9rhQTpvfZjj5y6czddWY",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJk-MwkT-dX0YRZn3DJuaSk_w",
+         "plus_code" : {
+            "compound_code" : "82JV+XW Stockholm, Sweden",
+            "global_code" : "9FFW82JV+XW"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJk-MwkT-dX0YRZn3DJuaSk_w",
+         "scope" : "GOOGLE",
+         "types" : [ "restaurant", "food", "point_of_interest", "establishment" ],
+         "user_ratings_total" : 39,
+         "vicinity" : "Scheelegatan 15, Stockholm"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 59.33232859999999,
+               "lng" : 18.0448504
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 59.3336659302915,
+                  "lng" : 18.0462780302915
+               },
+               "southwest" : {
+                  "lat" : 59.33096796970848,
+                  "lng" : 18.0435800697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+         "name" : "Stockholm Pizza",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 3664,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/115090841130542812023\"\u003eMagnus S\u003c/a\u003e"
+               ],
+               "photo_reference" : "Aaw_FcKWiTfPVpsJEOyuSMW1u1ROfsR1tb15UNs_mwSsE0bCxKOt2tdH1unGMS6Cn3A3UKuoNbow-grCk4HhP7G-NZdXcaPaI0uZyZbC4Aure6QtGjbVr0Xn1jr0K3h4wAMtvifnPCmAPYtY7dVPqHNdVTTwa4HgxjLKxy2gED-sG5NP1Vie",
+               "width" : 5488
+            }
+         ],
+         "place_id" : "ChIJld9L-WKdX0YRkzSK9uvjzi4",
+         "plus_code" : {
+            "compound_code" : "82JV+WW Stockholm, Sweden",
+            "global_code" : "9FFW82JV+WW"
+         },
+         "rating" : 3.8,
+         "reference" : "ChIJld9L-WKdX0YRkzSK9uvjzi4",
+         "scope" : "GOOGLE",
+         "types" : [ "restaurant", "food", "point_of_interest", "establishment" ],
+         "user_ratings_total" : 233,
+         "vicinity" : "Scheelegatan 15, Stockholm"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 59.3330542,
+               "lng" : 18.0446447
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 59.3343277302915,
+                  "lng" : 18.0459529302915
+               },
+               "southwest" : {
+                  "lat" : 59.33162976970848,
+                  "lng" : 18.0432549697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+         "name" : "Holy Greens",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 3024,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117704501103690068678\"\u003eJocke Sjborg\u003c/a\u003e"
+               ],
+               "photo_reference" : "Aaw_FcJE1GFzVhbK1BpRd5etNdNMXJmGCve7ZAysZ1I5CmyA6dIf5T4YHjrbc-xTVR04QucE_m_X256V1vhRI6W7mDk3nIlimI4eJBNKXt0S48iX0dnQqJfznxjTU1kyNmSlSCUJ_S9PX4Hg2Z4xCCZCzqmloOVVWxid2uZBJWYg86cb-1Xk",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJ7Xd4LmidX0YRBOhR3WkPp_E",
+         "plus_code" : {
+            "compound_code" : "82MV+6V Stockholm, Sweden",
+            "global_code" : "9FFW82MV+6V"
+         },
+         "price_level" : 2,
+         "rating" : 4,
+         "reference" : "ChIJ7Xd4LmidX0YRBOhR3WkPp_E",
+         "scope" : "GOOGLE",
+         "types" : [ "restaurant", "food", "point_of_interest", "establishment" ],
+         "user_ratings_total" : 61,
+         "vicinity" : "Fleminggatan 16, Stockholm"
+      }
+   ],
+   "status" : "OK"
+}

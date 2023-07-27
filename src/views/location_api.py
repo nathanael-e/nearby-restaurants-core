@@ -49,9 +49,17 @@ class LocationAPI:
             status = json_response["status"]
             if status:
                 if status == "OK":
-                    return json_response
+                    return self.__parse_response(json_response)
                 return jsonify("error: received invalid status code: " + status), 400
         return jsonify({"error": "Failed to fetch data"}), 500
+
+    def __parse_response(self, response: dict):
+        results = []
+        for restaurant in response["results"]:
+            results.append(
+                {"name": restaurant["name"], "vicinity": restaurant["vicinity"]}
+            )
+        return jsonify({"hits": results})
 
     def get_bp(self):
         """Return the blueprint"""
