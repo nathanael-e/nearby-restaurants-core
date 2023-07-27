@@ -60,7 +60,6 @@ class LocationAPI:
                 {
                     "name": restaurant["name"],
                     "vicinity": restaurant["vicinity"],
-                    "rating": restaurant["rating"],
                 }
             )
         return jsonify({"results": results})
