@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: restaurant-finder
-          image: europe-north1-docker.pkg.dev/restaurant-finder-393607/restaurant-finder-docker/nearby-restaurants:master-217ded7 # Replace with your actual container image
+          image: europe-north1-docker.pkg.dev/restaurant-finder-393607/restaurant-finder-docker/nearby-restaurants:master-2401dcb # Replace with your actual container image
           ports:
             - name: http-port
               containerPort: 5000
