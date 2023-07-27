@@ -57,9 +57,13 @@ class LocationAPI:
         results = []
         for restaurant in response["results"]:
             results.append(
-                {"name": restaurant["name"], "vicinity": restaurant["vicinity"]}
+                {
+                    "name": restaurant["name"],
+                    "vicinity": restaurant["vicinity"],
+                    "rating": restaurant["rating"],
+                }
             )
-        return jsonify({"hits": results})
+        return jsonify({"results": results})
 
     def get_bp(self):
         """Return the blueprint"""
