@@ -1,5 +1,5 @@
 # pylint: disable=C0103
-from itsdangerous import Serializer, BadSignature, SignatureExpired
+from itsdangerous import TimedSerializer, BadSignature, SignatureExpired
 from flask import Blueprint, request, jsonify
 import requests
 from .. import constants
@@ -8,8 +8,12 @@ from .. import constants
 class LocationAPI:
     __BEARER = "Bearer "
 
-    def __init__(self, app):
+    def __init__(
+        self,
+        app,
+    ):
         self.app = app
+        self.serializer = TimedSerializer(self.app.config[constants.API_TOKEN])
         self.bp = Blueprint("location", __name__, url_prefix="/api/location")
         self.bp.before_request(self.__validate_token)
         self.bp.route("/restaurants", methods=["GET"])(self.__restaurants)
@@ -18,9 +22,8 @@ class LocationAPI:
         token = request.headers.get("Authorization")
         if token and token.startswith(self.__BEARER):
             token = token[len(self.__BEARER) :]
-            serializer = Serializer(self.app.config[constants.API_TOKEN])
             try:
-                serializer.loads(token)
+                self.serializer.loads(token, max_age=constants.MAX_AGE)
                 return None
             except SignatureExpired:
                 return jsonify({"message": "Token has expired"}), 401

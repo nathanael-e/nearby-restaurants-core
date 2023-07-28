@@ -1,8 +1,8 @@
 import os
-from itsdangerous import Serializer
 from flask import Flask
 from . import constants
 from .views import app_restfinder_info
+from .views.token_api import TokenAPI
 from .views.location_api import LocationAPI
 
 
@@ -27,6 +27,7 @@ class FlaskServer:
     def __create_blueprints(self):
         """Create blueprints"""
         self.app.register_blueprint(app_restfinder_info.bp)
+        self.app.register_blueprint(TokenAPI(self.app).get_bp())
         self.app.register_blueprint(LocationAPI(self.app).get_bp())
 
     def get_app(self):
