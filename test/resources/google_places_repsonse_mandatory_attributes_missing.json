@@ -1,0 +1,11 @@
+{
+    "results": [
+        {
+            "name": "Foo"
+        },
+        {
+            "vicinity": "Bar"
+        }
+    ],
+    "status": "OK"
+}
