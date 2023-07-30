@@ -21,9 +21,9 @@ class TestBase:
         yield app.test_client()
 
     @pytest.fixture()
-    def token(self):
+    def token(self, test_client: Flask.test_client):
         """Token to be used for authentication with the test server"""
-        return "{}.TZpMgVQVA5Gla6Mzrl1X2svmeCQ"
+        return test_client.get("/api/token/renew").json["token"]
 
     @pytest.fixture()
     def headers(self, token):

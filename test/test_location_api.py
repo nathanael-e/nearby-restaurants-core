@@ -1,9 +1,10 @@
 # pylint: disable=C0116
-from test.test_base import TestBase
-import re
 import json
-from flask import Flask
+import re
+from test.test_base import TestBase
+
 import requests_mock
+from flask import Flask
 
 
 class TestLocationAPI(TestBase):
@@ -43,8 +44,8 @@ class TestLocationAPI(TestBase):
                     headers=headers,
                 )
                 data = response.json
-                assert response.status_code == 400
-                assert data == "error: received invalid status code: REQUEST_DENIED"
+                assert response.status_code == 500
+                assert data["error"] == "Failed to fetch data"
 
     def test_location_api_bad_request_google_api(
         self, test_client: Flask.test_client, headers: dict
@@ -83,9 +84,7 @@ class TestLocationAPI(TestBase):
                     "/api/location/restaurants?longitude=2&latitude=5",
                     headers=headers,
                 )
-                data = response.json
                 assert response.status_code == 200
-                print(data)
 
     def test_location_api_invalid_token(self, app):
         invalid_header = {
@@ -96,3 +95,28 @@ class TestLocationAPI(TestBase):
             data = response.json
             assert response.status_code == 401
             assert data["message"] == "Invalid token"
+
+    def test_search_result_with_missing_attributes_are_omitted(
+        self, test_client: Flask.test_client, headers: dict
+    ):
+        with requests_mock.Mocker() as mocker:
+            with open(
+                "test/resources/google_places_repsonse_mandatory_attributes_missing.json",
+                encoding="utf-8",
+            ) as response_json:
+                mocker = requests_mock.Mocker()
+                matcher = re.compile(
+                    "https://maps.googleapis.com/maps/api/place/nearbysearch/.*"
+                )
+                mocker.get(
+                    matcher,
+                    json=json.load(response_json),
+                )
+                mocker.start()
+                response = test_client.get(
+                    "/api/location/restaurants?longitude=2&latitude=5",
+                    headers=headers,
+                )
+                data = response.json
+                assert response.status_code == 200
+                assert data == {"results": []}
