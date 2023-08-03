@@ -1,11 +1,13 @@
 # pylint: disable=C0103
 import jwt
 import requests
-from flask import Blueprint, jsonify, request
+from flask import Blueprint, Response, jsonify, request
 
 from .. import constants
 
 nearby_search_template = {"name": None, "vicinity": None}
+
+photo_template = {"height": None, "width": None, "photo_reference": None}
 
 nearby_serach_template_mandatory = {
     key: value for key, value in nearby_search_template.items() if value is None
@@ -23,6 +25,7 @@ class LocationAPI:
         self.bp = Blueprint("location", __name__, url_prefix="/api/location")
         self.bp.before_request(self.__validate_token)
         self.bp.route("/restaurants", methods=["GET"])(self.__restaurants)
+        self.bp.route("/photo", methods=["GET"])(self.__photo)
 
     def __validate_token(self):
         token = request.headers.get("Authorization")
@@ -59,6 +62,22 @@ class LocationAPI:
                 return self.__parse_response(json_response)
         return jsonify({"error": "Failed to fetch data"}), 500
 
+    def __photo(self):
+        photo_reference = request.args.get("photo_reference")
+        if not photo_reference:
+            return "An error occured ...", 400
+        url = (
+            "https://maps.googleapis.com/maps/api/place/photo"
+            f"?maxwidth=400&photo_reference={photo_reference}"
+            f"&key={self.app.config[constants.API_GOOGLE_PLACES_TOKEN]}"
+        )
+        response = requests.get(url, timeout=10)
+        if response.status_code == 200:
+            return Response(
+                response.content, content_type=response.headers["Content-Type"]
+            )
+        return jsonify({"error": "An error occured. Please try again."}), 500
+
     def __parse_response(self, response):
         results = []
         for result in response["results"]:
@@ -67,11 +86,20 @@ class LocationAPI:
             mapped_response = {}
             for key, default_value in nearby_search_template.items():
                 mapped_response[key] = result.get(key, default_value)
+            photo = result["photos"][0] if result["photos"] else None
+            if photo and self.__valid_photo(photo):
+                mapped_photo = {}
+                for key, default_value in photo_template.items():
+                    mapped_photo[key] = photo.get(key)
+                mapped_response["photo"] = mapped_photo
             results.append(mapped_response)
         return jsonify({"results": results})
 
     def __valid_response(self, result: dict) -> bool:
         return all(key in result for key in nearby_serach_template_mandatory)
+
+    def __valid_photo(self, photo: dict) -> bool:
+        return all(key in photo for key in photo_template)
 
     def get_bp(self):
         """Return the blueprint"""
