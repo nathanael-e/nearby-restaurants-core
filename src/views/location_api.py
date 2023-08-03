@@ -5,7 +5,7 @@ from flask import Blueprint, Response, jsonify, request
 
 from .. import constants
 
-nearby_search_template = {"name": None, "vicinity": None}
+nearby_search_template = {"name": None, "vicinity": None, "place_id": None}
 
 photo_template = {"height": None, "width": None, "photo_reference": None}
 
