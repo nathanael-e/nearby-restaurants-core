@@ -1,10 +1,12 @@
 # pylint: disable=C0116
 import json
 import re
+from io import BytesIO
 from test.test_base import TestBase
 
 import requests_mock
 from flask import Flask
+from PIL import Image
 
 
 class TestLocationAPI(TestBase):
@@ -120,3 +122,37 @@ class TestLocationAPI(TestBase):
                 data = response.json
                 assert response.status_code == 200
                 assert data == {"results": []}
+
+    def test_photo_api(self, test_client: Flask.test_client, headers: dict):
+        with requests_mock.Mocker() as mocker:
+            image = Image.open("test/resources/pictures/beer.jpg")
+            image_bytes = BytesIO()
+            image.save(image_bytes, format="JPEG")
+            image_bytes.seek(0)
+            matcher = re.compile("https://maps.googleapis.com/maps/api/place/photo.*")
+            mocker.get(
+                url=matcher,
+                content=image_bytes.read(),
+                headers={"Content-Type": "image/jpeg"},
+            )
+            response = test_client.get(
+                "/api/location/photo?photo_reference=2",
+                headers=headers,
+            )
+            assert response.status_code == 200
+
+    def test_photo_api_bad_request(self, test_client: Flask.test_client, headers: dict):
+        response = test_client.get("/api/location/photo", headers=headers)
+        assert response.status_code == 400
+
+    def test_photo_api_server_error(
+        self, test_client: Flask.test_client, headers: dict
+    ):
+        with requests_mock.Mocker() as mocker:
+            matcher = re.compile("https://maps.googleapis.com/maps/api/place/photo.*")
+            mocker.get(url=matcher, status_code=400)
+            response = test_client.get(
+                "/api/location/photo?photo_reference=2",
+                headers=headers,
+            )
+            assert response.status_code == 500
