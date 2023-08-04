@@ -26,7 +26,7 @@ class FlaskServer:
         self.__init()
 
     def __init(self):
-        self.app.logger.setLevel(logging.ERROR)
+        self.app.logger.setLevel(logging.INFO)
         log_handler = TimedRotatingFileHandler(
             "app.log", when="midnight", interval=1, backupCount=7
         )
