@@ -1,9 +1,13 @@
+import logging
 import os
+from logging.handlers import TimedRotatingFileHandler
+
 from flask import Flask
+
 from . import constants
 from .views import app_restfinder_info
-from .views.token_api import TokenAPI
 from .views.location_api import LocationAPI
+from .views.token_api import TokenAPI
 
 
 class FlaskServer:
@@ -22,6 +26,16 @@ class FlaskServer:
         self.__init()
 
     def __init(self):
+        self.app.logger.setLevel(logging.ERROR)
+        log_handler = TimedRotatingFileHandler(
+            "app.log", when="midnight", interval=1, backupCount=7
+        )
+        formatter = logging.Formatter(
+            "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+        )
+        log_handler.setFormatter(formatter)
+        self.app.logger.addHandler(log_handler)
+        self.app.logger.info("Hello from app.log")
         self.__create_blueprints()
 
     def __create_blueprints(self):
