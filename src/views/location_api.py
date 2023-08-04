@@ -1,7 +1,7 @@
 # pylint: disable=C0103
 import jwt
 import requests
-from flask import Blueprint, Response, jsonify, request
+from flask import Blueprint, Flask, Response, jsonify, request
 
 from .. import constants
 
@@ -19,15 +19,18 @@ class LocationAPI:
 
     def __init__(
         self,
-        app,
+        app: Flask,
     ):
         self.app = app
+        self.logger = app.logger
         self.bp = Blueprint("location", __name__, url_prefix="/api/location")
         self.bp.before_request(self.__validate_token)
         self.bp.route("/restaurants", methods=["GET"])(self.__restaurants)
         self.bp.route("/photo", methods=["GET"])(self.__photo)
 
     def __validate_token(self):
+        self.logger.info("Headers: %s", request.headers)
+        self.logger.info("Body: %s", request.get_data())
         token = request.headers.get("Authorization")
         if token and token.startswith(self.__BEARER):
             token = token[len(self.__BEARER) :]
