@@ -5,7 +5,12 @@ from flask import Blueprint, Flask, Response, jsonify, request
 
 from .. import constants
 
-nearby_search_template = {"name": None, "vicinity": None, "place_id": None}
+nearby_search_template = {
+    "name": None,
+    "vicinity": None,
+    "place_id": None,
+    "photos": None,
+}
 
 photo_template = {"height": None, "width": None, "photo_reference": None}
 
@@ -67,11 +72,13 @@ class LocationAPI:
 
     def __photo(self):
         photo_reference = request.args.get("photo_reference")
-        if not photo_reference:
+        height = request.args.get("height")
+        width = request.args.get("width")
+        if not photo_reference or not height or not width:
             return "An error occured ...", 400
         url = (
             "https://maps.googleapis.com/maps/api/place/photo"
-            f"?maxwidth=400&photo_reference={photo_reference}"
+            f"?maxwidth={width}&maxheight{height}&photo_reference={photo_reference}"
             f"&key={self.app.config[constants.API_GOOGLE_PLACES_TOKEN]}"
         )
         response = requests.get(url, timeout=10)

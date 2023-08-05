@@ -136,7 +136,7 @@ class TestLocationAPI(TestBase):
                 headers={"Content-Type": "image/jpeg"},
             )
             response = test_client.get(
-                "/api/location/photo?photo_reference=2",
+                "/api/location/photo?photo_reference=2&height=4&width=10",
                 headers=headers,
             )
             assert response.status_code == 200
@@ -152,7 +152,7 @@ class TestLocationAPI(TestBase):
             matcher = re.compile("https://maps.googleapis.com/maps/api/place/photo.*")
             mocker.get(url=matcher, status_code=400)
             response = test_client.get(
-                "/api/location/photo?photo_reference=2",
+                "/api/location/photo?photo_reference=2&height=5&width=10",
                 headers=headers,
             )
             assert response.status_code == 500
