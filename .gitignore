@@ -6,3 +6,4 @@ pip-log.txt
 .vscode
 .coverage
 coverage.xml
+app.log*
