@@ -34,6 +34,7 @@ class LocationAPI:
         self.bp.route("/photo", methods=["GET"])(self.__photo)
 
     def __validate_token(self):
+        self.logger.info("URL: %s", request.url)
         self.logger.info("Headers: %s", request.headers)
         self.logger.info("Body: %s", request.get_data())
         token = request.headers.get("Authorization")
