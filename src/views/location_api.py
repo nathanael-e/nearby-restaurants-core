@@ -89,7 +89,7 @@ class LocationAPI:
             mapped_response = {}
             for key, default_value in nearby_search_template.items():
                 mapped_response[key] = result.get(key, default_value)
-            photo = result["photos"][0] if result["photos"] else None
+            photo = result["photos"][0] if result.get("photos") else None
             if photo and self.__valid_photo(photo):
                 mapped_photo = {}
                 for key, default_value in photo_template.items():
