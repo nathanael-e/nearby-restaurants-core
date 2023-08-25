@@ -1,0 +1,34 @@
+{
+    "results": [
+        {
+            "name": "Caf\u00e9 Bl\u00e5b\u00e4r",
+            "photo": {
+                "height": 3188,
+                "photo_reference": "1",
+                "width": 5018
+            },
+            "place_id": "ChIJlaw7HX2dX0YROK-_u4NqqlA",
+            "vicinity": "Fleminggatan 53, Stockholm"
+        },
+        {
+            "name": "Clarion Hotel Amaranten",
+            "photo": {
+                "height": 3888,
+                "photo_reference": "2",
+                "width": 5184
+            },
+            "place_id": "ChIJVf9AXmKdX0YR36MXSqDHkOw",
+            "vicinity": "Kungsholmsgatan 31, Stockholm"
+        },
+        {
+            "name": "McDonald's",
+            "photo": {
+                "height": 3024,
+                "photo_reference": "3",
+                "width": 4032
+            },
+            "place_id": "ChIJvy-y53udX0YRThPUMULJ8Gg",
+            "vicinity": "Sankt Eriksgatan 32, Stockholm"
+        }
+    ]
+}
