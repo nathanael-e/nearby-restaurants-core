@@ -6,17 +6,13 @@ from flask import Blueprint, Flask, Response, jsonify, request
 from .. import constants
 
 nearby_search_template = {
-    "name": None,
-    "vicinity": None,
-    "place_id": None,
-    "photos": None,
+    "name": "map",
+    "vicinity": "map",
+    "place_id": "map",
+    "photos": "skip",
 }
 
-photo_template = {"height": None, "width": None, "photo_reference": None}
-
-nearby_serach_template_mandatory = {
-    key: value for key, value in nearby_search_template.items() if value is None
-}
+photo_template = {"height": "map", "width": "map", "photo_reference": "map"}
 
 
 class LocationAPI:
@@ -29,11 +25,11 @@ class LocationAPI:
         self.app = app
         self.logger = app.logger
         self.bp = Blueprint("location", __name__, url_prefix="/api/location")
-        self.bp.before_request(self.__validate_token)
-        self.bp.route("/restaurants", methods=["GET"])(self.__restaurants)
-        self.bp.route("/photo", methods=["GET"])(self.__photo)
+        self.bp.before_request(self._validate_token)
+        self.bp.route("/restaurants", methods=["GET"])(self._restaurants)
+        self.bp.route("/photo", methods=["GET"])(self._photo)
 
-    def __validate_token(self):
+    def _validate_token(self):
         self.logger.info("URL: %s", request.url)
         self.logger.info("Headers: %s", request.headers)
         self.logger.info("Body: %s", request.get_data())
@@ -52,7 +48,7 @@ class LocationAPI:
         else:
             return jsonify({"message": "This API requires an access token."}), 401
 
-    def __restaurants(self):
+    def _restaurants(self):
         """Return near restaurants based on longitude and latitude"""
         longitude = request.args.get("longitude")
         latitude = request.args.get("latitude")
@@ -71,7 +67,7 @@ class LocationAPI:
                 return self.__parse_response(json_response)
         return jsonify({"error": "Failed to fetch data"}), 500
 
-    def __photo(self):
+    def _photo(self):
         photo_reference = request.args.get("photo_reference")
         height = request.args.get("height")
         width = request.args.get("width")
@@ -95,22 +91,25 @@ class LocationAPI:
             if not self.__valid_response(result):
                 continue
             mapped_response = {}
-            for key, default_value in nearby_search_template.items():
-                mapped_response[key] = result.get(key, default_value)
-            photo = result["photos"][0] if result.get("photos") else None
+            for key, value in nearby_search_template.items():
+                if value == "map":
+                    mapped_response[key] = result.get(key)
+            photo = result["photos"][0] if len(result["photos"]) >= 1 else None
             if photo and self.__valid_photo(photo):
                 mapped_photo = {}
-                for key, default_value in photo_template.items():
+                for key, value in photo_template.items():
                     mapped_photo[key] = photo.get(key)
                 mapped_response["photo"] = mapped_photo
             results.append(mapped_response)
         return jsonify({"results": results})
 
     def __valid_response(self, result: dict) -> bool:
-        return all(key in result for key in nearby_serach_template_mandatory)
+        return all(
+            key in result and result[key] is not None for key in nearby_search_template
+        )
 
     def __valid_photo(self, photo: dict) -> bool:
-        return all(key in photo for key in photo_template)
+        return all(key in photo and photo[key] is not None for key in photo_template)
 
     def get_bp(self):
         """Return the blueprint"""

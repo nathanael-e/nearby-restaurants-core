@@ -327,16 +327,7 @@
          "opening_hours": {
             "open_now": true
          },
-         "photos": [
-            {
-               "height": 1776,
-               "html_attributions": [
-                  "\u003ca href=\"https://maps.google.com/maps/contrib/105288787263163649924\"\u003ePolette Gonzalez\u003c/a\u003e"
-               ],
-               "photo_reference": "Aaw_FcJNYv851rMWxJ5sWB6V3eAEXa3TgcQrdHcf7_6LRZGnV56x7_2AkriljALVurlnvCWHsRyXmQGo5kmBb1IRoJ7jrYmc4s4l57IORj95ayh2SzPz3mTT7DOXCQiBbeDN8rgLjwL6OkxsDumXX3sz_w-YYIz0AWII82IQRGGATXeyZSlE",
-               "width": 2268
-            }
-         ],
+         "photos": [],
          "place_id": "ChIJoel11mKdX0YRKpfeKUsBJ40",
          "plus_code": {
             "compound_code": "82MR+9P Stockholm, Sweden",
