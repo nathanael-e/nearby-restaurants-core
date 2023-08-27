@@ -2,7 +2,6 @@ venv/
 __pycache__/
 *.pyc
 pip-log.txt
-.env
 .vscode
 .coverage
 coverage.xml
