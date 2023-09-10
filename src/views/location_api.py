@@ -9,6 +9,7 @@ nearby_search_template = {
     "name": "map",
     "vicinity": "map",
     "place_id": "map",
+    "rating": "optional",
     "photos": "skip",
 }
 
@@ -93,25 +94,29 @@ class LocationAPI:
     def __parse_response(self, response):
         results = []
         for result in response["results"]:
-            if not self.__valid_response(result):
-                continue
-            mapped_response = {}
-            for key, value in nearby_search_template.items():
-                if value == "map":
-                    mapped_response[key] = result.get(key)
-            photo = result["photos"][0] if len(result["photos"]) >= 1 else None
-            if photo and self.__valid_photo(photo):
-                mapped_photo = {}
-                for key, value in photo_template.items():
-                    mapped_photo[key] = photo.get(key)
-                mapped_response["photo"] = mapped_photo
-            results.append(mapped_response)
+            self.__add_restaurant(result, results)
         return jsonify({"results": results})
 
-    def __valid_response(self, result: dict) -> bool:
-        return all(
-            key in result and result[key] is not None for key in nearby_search_template
-        )
+    def __add_restaurant(self, result: dict, results: []) -> None:
+        mapped_response = {}
+        for key, value in nearby_search_template.items():
+            if value == "map":
+                if result.get(key) is None:
+                    return
+                mapped_response[key] = result.get(key)
+            elif value == "optional":
+                if result.get(key) is not None:
+                    mapped_response[key] = result.get(key)
+        if result.get("photos") is None:
+            return
+        photo = result["photos"][0] if len(result["photos"]) >= 1 else None
+        if photo and self.__valid_photo(photo):
+            mapped_photo = {}
+            for key, value in photo_template.items():
+                mapped_photo[key] = photo.get(key)
+            mapped_response["photo"] = mapped_photo
+        results.append(mapped_response)
+
 
     def __valid_photo(self, photo: dict) -> bool:
         return all(key in photo and photo[key] is not None for key in photo_template)
