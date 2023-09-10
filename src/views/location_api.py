@@ -33,9 +33,14 @@ class LocationAPI:
         self.logger.info("URL: %s", request.url)
         self.logger.info("Headers: %s", request.headers)
         self.logger.info("Body: %s", request.get_data())
-        token = request.headers.get("Authorization")
-        if token and token.startswith(self.__BEARER):
-            token = token[len(self.__BEARER) :]
+        token = None
+        if request.headers.get("Authorization"):
+            token = request.headers.get("Authorization")
+            if token.startswith(self.__BEARER):
+                token = token[len(self.__BEARER) :]
+        elif request.args.get("token"):
+            token = request.args.get("token")
+        if token:
             try:
                 jwt.decode(
                     token, self.app.config[constants.API_TOKEN], algorithms=["HS256"]
