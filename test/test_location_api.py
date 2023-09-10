@@ -6,6 +6,7 @@ from test.test_base import TestBase
 
 import requests_mock
 from flask import Flask
+from jsondiff import diff
 from PIL import Image
 
 
@@ -86,7 +87,15 @@ class TestLocationAPI(TestBase):
                     "/api/location/restaurants?longitude=2&latitude=5",
                     headers=headers,
                 )
-                assert response.status_code == 200
+                with open(
+                    "test/resources/expected_restaurant_client_response.json",
+                    "r",
+                    encoding="utf-8",
+                ) as file:
+                    expected = json.dumps(json.load(file), sort_keys=True)
+                    actual = json.dumps(response.get_json(), sort_keys=True)
+                    difference = diff(expected, actual)
+                    assert difference == {}
 
     def test_location_api_invalid_token(self, app):
         invalid_header = {

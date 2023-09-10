@@ -6,9 +6,10 @@ from flask import Blueprint, Flask, Response, jsonify, request
 from .. import constants
 
 nearby_search_template = {
-    "name": "map",
-    "vicinity": "map",
-    "place_id": "map",
+    "name": "mandatory",
+    "vicinity": "mandatory",
+    "place_id": "mandatory",
+    "rating": "optional",
     "photos": "skip",
 }
 
@@ -93,11 +94,9 @@ class LocationAPI:
     def __parse_response(self, response):
         results = []
         for result in response["results"]:
-            if not self.__valid_response(result):
-                continue
             mapped_response = {}
             for key, value in nearby_search_template.items():
-                if value == "map":
+                if value == "mandatory" and response.get(key) is not None:
                     mapped_response[key] = result.get(key)
             photo = result["photos"][0] if len(result["photos"]) >= 1 else None
             if photo and self.__valid_photo(photo):
@@ -110,7 +109,8 @@ class LocationAPI:
 
     def __valid_response(self, result: dict) -> bool:
         return all(
-            key in result and result[key] is not None for key in nearby_search_template
+            key in result and (result[key] is not None or key == "optional")
+            for key in nearby_search_template
         )
 
     def __valid_photo(self, photo: dict) -> bool:

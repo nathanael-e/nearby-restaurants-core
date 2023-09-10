@@ -7,11 +7,13 @@ coverage==7.2.7
 dill==0.3.7
 exceptiongroup==1.1.2
 Flask==2.3.2
+Flask-Cors==4.0.0
 idna==3.4
 iniconfig==2.0.0
 isort==5.12.0
 itsdangerous==2.1.2
 Jinja2==3.1.2
+jsondiff==2.0.0
 lazy-object-proxy==1.9.0
 MarkupSafe==2.1.3
 mccabe==0.7.0
