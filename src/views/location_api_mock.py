@@ -38,7 +38,7 @@ class LocationAPIMock(LocationAPI):
             return "An error occured ...", 400
         if photo_reference == "1":
             return send_file(
-                "resources/mock/restaurants/images/cafe_bla.jpg",
+                "resources/mock/restaurants/images/cafe_bla.jpg", mimetype="image/jpeg"
             )
         if photo_reference == "2":
             time.sleep(5)
