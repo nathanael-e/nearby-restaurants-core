@@ -3,6 +3,7 @@ import json
 import re
 from io import BytesIO
 from test.test_base import TestBase
+from jsondiff import diff
 
 import requests_mock
 from flask import Flask
@@ -86,7 +87,11 @@ class TestLocationAPI(TestBase):
                     "/api/location/restaurants?longitude=2&latitude=5",
                     headers=headers,
                 )
-                assert response.status_code == 200
+                with open("test/resources/client_response_expected.json", encoding="utf-8") as file:
+                    expected = json.dumps(json.load(file), sort_keys=True)
+                    actual = json.dumps(response.json, sort_keys=True)
+                    difference = diff(actual, expected)
+                    assert difference == {}
 
     def test_location_api_invalid_token(self, app):
         invalid_header = {
