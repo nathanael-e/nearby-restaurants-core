@@ -3,10 +3,10 @@ import json
 import re
 from io import BytesIO
 from test.test_base import TestBase
-from jsondiff import diff
 
 import requests_mock
 from flask import Flask
+from jsondiff import diff
 from PIL import Image
 
 
@@ -87,7 +87,9 @@ class TestLocationAPI(TestBase):
                     "/api/location/restaurants?longitude=2&latitude=5",
                     headers=headers,
                 )
-                with open("test/resources/client_response_expected.json", encoding="utf-8") as file:
+                with open(
+                    "test/resources/client_response_expected.json", encoding="utf-8"
+                ) as file:
                     expected = json.dumps(json.load(file), sort_keys=True)
                     actual = json.dumps(response.json, sort_keys=True)
                     difference = diff(actual, expected)

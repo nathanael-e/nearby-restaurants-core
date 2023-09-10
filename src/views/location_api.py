@@ -117,7 +117,6 @@ class LocationAPI:
             mapped_response["photo"] = mapped_photo
         results.append(mapped_response)
 
-
     def __valid_photo(self, photo: dict) -> bool:
         return all(key in photo and photo[key] is not None for key in photo_template)
 
