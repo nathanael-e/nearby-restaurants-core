@@ -8,6 +8,7 @@
                 "width": 3648
             },
             "place_id": "ChIJhewYyWKdX0YRtVJyQyuOgzA",
+            "rating": null,
             "vicinity": "Kungsholmsgatan 40, Stockholm"
         },
         {
@@ -42,12 +43,6 @@
             "place_id": "ChIJf1-56WKdX0YR7EnOggek0nI",
             "rating": 4.2,
             "vicinity": "Norra Agnegatan 41, Stockholm"
-        },
-        {
-            "name": "Matsu Sushi",
-            "place_id": "ChIJoel11mKdX0YRKpfeKUsBJ40",
-            "rating": 4.4,
-            "vicinity": "Fleminggatan 22, Stockholm"
         },
         {
             "name": "Subway",

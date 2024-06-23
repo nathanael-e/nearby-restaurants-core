@@ -13,7 +13,7 @@ nearby_search_template = {
     "photos": "skip",
 }
 
-photo_template = {"height": "map", "width": "map", "photo_reference": "map"}
+photo_template = ["height", "width", "photo_reference"]
 
 
 class LocationAPI:
@@ -94,6 +94,7 @@ class LocationAPI:
     def __parse_response(self, response):
         results = []
         for result in response["results"]:
+<<<<<<< HEAD
             self.__add_restaurant(result, results)
         return jsonify({"results": results})
 
@@ -116,9 +117,35 @@ class LocationAPI:
                 mapped_photo[key] = photo.get(key)
             mapped_response["photo"] = mapped_photo
         results.append(mapped_response)
+=======
+            item = self.__map_result(result)
+            if item:
+                results.append(item)
+        return jsonify({"results": results})
 
-    def __valid_photo(self, photo: dict) -> bool:
-        return all(key in photo and photo[key] is not None for key in photo_template)
+    def __map_result(self, result) -> dict:
+        mapped_response = {}
+        for key, value in nearby_search_template.items():
+            if value == "mandatory" and result.get(key) is None:
+                return None
+            if value == "skip":
+                continue
+            mapped_response[key] = result.get(key)
+        photos = result.get("photos")
+        if photos is None or len(photos) == 0:
+            return None
+        self.__map_photo(mapped_response, photos[0])
+        return mapped_response
+>>>>>>> abc6728 (make photos mandatory)
+
+    def __map_photo(self, response, photo):
+        mapped_photo = {}
+        for key in photo_template:
+            val = photo[key]
+            if val is None:
+                return
+            mapped_photo[key] = photo[key]
+        response["photo"] = mapped_photo
 
     def get_bp(self):
         """Return the blueprint"""
