@@ -6,3 +6,4 @@ pip-log.txt
 .coverage
 coverage.xml
 app.log*
+.env
