@@ -6,14 +6,17 @@ from flask import Blueprint, Flask, Response, jsonify, request
 from .. import constants
 
 nearby_search_template = {
-    "name": "map",
-    "vicinity": "map",
-    "place_id": "map",
-    "rating": "optional",
-    "photos": "skip",
+    "name": constants.MAP,
+    "vicinity": constants.MAP,
+    "place_id": constants.MAP,
+    "rating": constants.OPTIONAL,
+    "photos": constants.MAP,
 }
 
-photo_template = {"height": "map", "width": "map", "photo_reference": "map"}
+photo_keys = ["height", "width", "photo_reference"]
+
+
+excluded_types = ["gas_station"]
 
 
 class LocationAPI:
@@ -97,29 +100,37 @@ class LocationAPI:
             self.__add_restaurant(result, results)
         return jsonify({"results": results})
 
-    def __add_restaurant(self, result: dict, results: []) -> None:
+    def __add_restaurant(self, result: dict, results: list) -> None:
+        if result.get("types") is None:
+            return
+        for place_type in result.get("types"):
+            if place_type in excluded_types:
+                return
         mapped_response = {}
         for key, value in nearby_search_template.items():
-            if value == "map":
-                if result.get(key) is None:
-                    return
-                mapped_response[key] = result.get(key)
-            elif value == "optional":
-                if result.get(key) is not None:
-                    mapped_response[key] = result.get(key)
-        if result.get("photos") is None:
-            return
-        photo = result["photos"][0] if len(result["photos"]) >= 1 else None
-        if photo and self.__valid_photo(photo):
-            mapped_photo = {}
-            for key, value in photo_template.items():
-                mapped_photo[key] = photo.get(key)
-            mapped_response["photo"] = mapped_photo
+            success = self.__map(key, result, mapped_response)
+            if value == constants.MAP and not success:
+                return
         results.append(mapped_response)
 
+    def __map(self, key: str, result: dict, mapped_response: dict) -> bool:
+        if result.get(key) is None:
+            return False
+        if isinstance(result.get(key), list) and len(result.get(key)) == 0:
+            return False
+        if key == "photos":
+            return self.__map_photo(result["photos"][0], mapped_response)
+        mapped_response[key] = result[key]
+        return True
 
-    def __valid_photo(self, photo: dict) -> bool:
-        return all(key in photo and photo[key] is not None for key in photo_template)
+    def __map_photo(self, photo: dict, mapped_response: dict) -> bool:
+        mapped_photo = {}
+        for key in photo_keys:
+            if photo.get(key) is None:
+                return False
+            mapped_photo[key] = photo[key]
+        mapped_response["photo"] = mapped_photo
+        return True
 
     def get_bp(self):
         """Return the blueprint"""

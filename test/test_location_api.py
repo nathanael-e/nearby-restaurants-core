@@ -1,16 +1,31 @@
 # pylint: disable=C0116
+import difflib
 import json
 import re
 from io import BytesIO
 from test.test_base import TestBase
-from jsondiff import diff
 
 import requests_mock
 from flask import Flask
+from jsondiff import diff
 from PIL import Image
 
 
 class TestLocationAPI(TestBase):
+
+    def print_diff(self, expected, actual):
+        expected_lines = expected.splitlines()
+        actual_lines = actual.splitlines()
+        difference = difflib.unified_diff(
+            expected_lines,
+            actual_lines,
+            fromfile="expected",
+            tofile="actual",
+            lineterm="",
+        )
+        for line in difference:
+            print(line)
+
     def test_location_api_valid_token_missing_coordinates(self, app: Flask, headers):
         with app.test_client() as client:
             response = client.get("/api/location/restaurants", headers=headers)
@@ -87,11 +102,16 @@ class TestLocationAPI(TestBase):
                     "/api/location/restaurants?longitude=2&latitude=5",
                     headers=headers,
                 )
-                with open("test/resources/client_response_expected.json", encoding="utf-8") as file:
-                    expected = json.dumps(json.load(file), sort_keys=True)
-                    actual = json.dumps(response.json, sort_keys=True)
+                with open(
+                    "test/resources/client_response_expected.json", encoding="utf-8"
+                ) as file:
+                    expected = json.dumps(json.load(file), sort_keys=True, indent=4)
+                    actual = json.dumps(response.json, sort_keys=True, indent=4)
                     difference = diff(actual, expected)
-                    assert difference == {}
+                    if difference != {}:
+                        self.print_diff(expected, actual)
+                        assert False
+                    assert True
 
     def test_location_api_invalid_token(self, app):
         invalid_header = {
